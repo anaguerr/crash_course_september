@@ -1,0 +1,5 @@
+- this_test_should_pass:
+    max_bytes_read: null
+    max_time: null
+    pipe: null
+    sql: SELECT * FROM numbers(5) WHERE 0
