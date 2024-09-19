@@ -1,0 +1,24 @@
+
+    ##################################################
+    ###   Visit https://github.com/tinybirdco/ci   ###
+    ###   for more details or custom CI/CD         ###
+    ##################################################
+
+    name: Tinybird crash_course_september_git - CI Workflow
+
+    on:
+      workflow_dispatch:
+      pull_request:
+        branches:
+          - main
+          - master
+        types: [opened, reopened, labeled, unlabeled, synchronize, closed]
+
+    concurrency: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+
+    jobs:
+        ci: # ci using branches from workspace 'crash_course_september_git'
+          uses: tinybirdco/ci/.github/workflows/ci.yml@v4.1.0
+          secrets:
+            tb_admin_token: ${{ secrets.TB_CRASH_COURSE_SEPTEMBER_GIT_ADMIN_TOKEN }}  # set the Workspace admin token in GitHub secrets
+            tb_host: https://api.us-east.aws.tinybird.co
