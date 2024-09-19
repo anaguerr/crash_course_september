@@ -1,0 +1,15 @@
+
+SCHEMA >
+    `name` String `json:$.name`,
+    `passport_number` Int32 `json:$.passport_number`,
+    `airline` String `json:$.airline`,
+    `flight_from` String `json:$.flight_from`,
+    `flight_to` String `json:$.flight_to`,
+    `seat_number` String `json:$.seat_number`,
+    `timestamp` Date `json:$.timestamp`,
+    `transaction_id` String `json:$.transaction_id`
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(timestamp)"
+ENGINE_SORTING_KEY "seat_number, timestamp, transaction_id"
+ENGINE_TTL "timestamp + toIntervalDay(90)"

@@ -1,0 +1,25 @@
+- this_test_should_pass:
+    max_bytes_read: null
+    max_time: null
+    pipe: null
+    sql: SELECT * FROM numbers(5) WHERE 0
+- this_test_should_fail:
+    max_bytes_read: null
+    max_time: null
+    pipe: null
+    sql: SELECT * FROM numbers(5) WHERE 1
+- this_test_should_pass_over_time:
+    max_bytes_read: null
+    max_time: 1.0e-07
+    pipe: null
+    sql: SELECT * FROM numbers(5) WHERE 0
+- this_test_should_pass_over_bytes:
+    max_bytes_read: 5
+    max_time: null
+    pipe: null
+    sql: SELECT sum(number) AS total FROM numbers(5) HAVING total>1000
+- this_test_should_pass_over_time_and_bytes:
+    max_bytes_read: 5
+    max_time: 1.0e-07
+    pipe: null
+    sql: SELECT sum(number) AS total FROM numbers(5) HAVING total>1000

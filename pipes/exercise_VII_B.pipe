@@ -1,0 +1,20 @@
+NODE exercise_VII_B_0
+SQL >
+
+    SELECT day, countMerge(total_trips) as total_trips, avgMerge(avg_distance) as avg_distance
+    FROM exercise_VII_0_mv
+    group by day
+
+
+
+NODE exercise_VII_B_1
+SQL >
+
+    SELECT
+        toStartOfDay(tpep_pickup_datetime) AS day,
+        count() AS total_trips,
+        avg(trip_distance) AS avg_distance
+    FROM yellow_tripdata_2018_01
+    GROUP BY day
+
+

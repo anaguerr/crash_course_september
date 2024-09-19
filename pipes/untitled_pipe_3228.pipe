@@ -1,0 +1,6 @@
+NODE untitled_pipe_3228_0
+SQL >
+
+    SELECT * FROM exercise_IV final
+
+

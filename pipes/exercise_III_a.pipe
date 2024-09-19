@@ -1,0 +1,15 @@
+TOKEN "exercise_III_a_endpoint_read_9953" READ
+
+TOKEN "read_token" READ
+
+NODE exercise_III_a_0
+SQL >
+
+    %
+    SELECT toStartOfHour(tpep_pickup_datetime) as hour, avg(trip_distance) as avg_distance
+    FROM yellow_tripdata_2018_01_cli
+    where passenger_count={{Int16(passegers, 2)}}
+    group by hour
+    order by hour asc
+
+

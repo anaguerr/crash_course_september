@@ -1,0 +1,22 @@
+TOKEN "exercise_II_b_endpoint_read_2808" READ
+
+TAGS use_case_1
+
+NODE exercise_II_b_0
+SQL >
+
+    SELECT tpep_pickup_datetime, trip_distance
+    FROM yellow_tripdata_2018_01_cli
+    where passenger_count=4
+
+
+
+NODE exercise_II_b_1
+SQL >
+
+    SELECT toStartOfHour(tpep_pickup_datetime) as hour, avg(trip_distance) as avg_distance
+    FROM exercise_II_b_0
+    group by hour
+    order by hour asc
+
+

@@ -1,0 +1,10 @@
+# Data Source created from Pipe 'exercise_VII'
+
+SCHEMA >
+    `day` DateTime,
+    `total_trips` AggregateFunction(count),
+    `avg_distance` AggregateFunction(avg, Float32)
+
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(day)"
+ENGINE_SORTING_KEY "day"

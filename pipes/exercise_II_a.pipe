@@ -1,0 +1,9 @@
+TAGS test
+
+NODE exercise_II_0
+SQL >
+
+    SELECT count() as trips FROM yellow_tripdata_2018_01_cli
+    where passenger_count=4
+
+

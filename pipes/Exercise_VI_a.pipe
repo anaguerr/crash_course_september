@@ -1,0 +1,19 @@
+TOKEN "Exercise_VI_a_endpoint_read_8351" READ
+
+NODE Exercise_VI_a_0
+SQL >
+
+    select count() from (
+    SELECT * FROM exercise_VI
+    where toStartOfDay(tpep_pickup_datetime) = '2018-01-06'
+      )
+
+
+
+NODE Exercise_VI_a_1
+SQL >
+
+    SELECT * FROM exercise_VI
+    where trip_distance between 1 and 2
+
+

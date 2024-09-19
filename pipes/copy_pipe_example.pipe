@@ -1,0 +1,13 @@
+NODE copy_pipe
+SQL >
+
+    SELECT 
+    toDateTime(coalesce(tpep_pickup_datetime, '')) as tpep_pickup_datetime
+    FROM yellow_tripdata_2018_01_quarantine
+
+TYPE copy
+TARGET_DATASOURCE copy_untitled_pipe_7826
+COPY_MODE append
+COPY_SCHEDULE @on-demand
+
+

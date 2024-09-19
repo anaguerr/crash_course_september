@@ -1,0 +1,7 @@
+
+SCHEMA >
+    `tpep_pickup_datetime` DateTime
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(tpep_pickup_datetime)"
+ENGINE_SORTING_KEY "tpep_pickup_datetime"

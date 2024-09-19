@@ -1,0 +1,6 @@
+NODE sink_pipe_0
+SQL >
+
+    SELECT * FROM copy_untitled_pipe_7826
+
+
